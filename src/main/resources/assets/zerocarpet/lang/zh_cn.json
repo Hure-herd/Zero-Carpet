@@ -1,0 +1,22 @@
+{
+  "carpet.category.ZERO": "ZERO",
+
+  "carpet.rule.PortalPearlWarp.name": "珍珠超传",
+  "carpet.rule.PortalPearlWarp.desc": "它可以移植回来1.13的超传，在某些特定的地方",
+
+  "carpet.rule.mergeTNTPro.name": "更好的合并TNT",
+  "carpet.rule.mergeTNTPro.desc": "合并大量TNT以减小实体及爆炸带来的卡顿",
+
+  "carpet.rule.disableBatCanSpawn.name": "禁止蝙蝠生成",
+  "carpet.rule.disableBatCanSpawn.desc" : "阻止蝙蝠自然生成",
+
+  "carpet.rule.enderpearlloadchunk.name": "珍珠加载区块",
+  "carpet.rule.enderpearlloadchunk.desc" : "珍珠可以加载区块就像1.21.2一样。当加载超过100gt后自动删除",
+
+  "carpet.rule.projectileRaycastLength.name": "投掷物Raycast长度",
+  "carpet.rule.projectileRaycastLength.desc": "更改Raycast的距离。如果设置为0，将检查所有到达目的地的块，Vanilla!",
+  "carpet.rule.projectileRaycastLength.extra.0": "这减少了快速移动的延迟。在1.12中该值为200。",
+
+  "carpet.rule.Pealtime.name": "珍珠飞行时间",
+  "carpet.rule.Pealtime.desc": "这个可以控制珍珠飞行多久就销毁"
+}
