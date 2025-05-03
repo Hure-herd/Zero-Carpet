@@ -64,7 +64,7 @@ public abstract class EnderPearlEntityMixin extends ThrownEntity {
             this.highSpeedTick = this.age;
         }
 
-        if (!ZeroServer.shouldKeepPearl && highSpeedTick != -1L && this.age - highSpeedTick > ZeroSettings.Pealtime
+        if (!ZeroServer.shouldKeepPearl && highSpeedTick != -1L && this.age - highSpeedTick > ZeroSettings.Pearltime
         ) {
             ZeroServer.LOGGER.warn(
                     "The pearl(own: {}) has been in high speed for a long time and has been removed",

@@ -17,6 +17,6 @@
   "carpet.rule.projectileRaycastLength.desc": "更改Raycast的距离。如果设置为0，将检查所有到达目的地的块，Vanilla!",
   "carpet.rule.projectileRaycastLength.extra.0": "这减少了快速移动的延迟。在1.12中该值为200。",
 
-  "carpet.rule.Pealtime.name": "珍珠飞行时间",
-  "carpet.rule.Pealtime.desc": "这个可以控制珍珠飞行多久就销毁"
+  "carpet.rule.Pearltime.name": "珍珠飞行时间",
+  "carpet.rule.Pearltime.desc": "这个可以控制珍珠飞行多久就销毁"
 }

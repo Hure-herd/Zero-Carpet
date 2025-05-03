@@ -17,6 +17,6 @@
   "carpet.rule.projectileRaycastLength.desc": "Changes the distance projectiles check for collisions. If set to 0 all Blocks to the destination will be checked which is the Vanilla behaviour.",
   "carpet.rule.projectileRaycastLength.extra.0": "This reduces lag for fast projectiles. In 1.12 the value was 200.",
 
-  "carpet.rule.Pealtime.name": "Pealtime",
-  "carpet.rule.Pealtime.desc": "This can control how long the pearl flies before it is destroyed. "
+  "carpet.rule.Pearltime.name": "Pealtime",
+  "carpet.rule.Pearltime.desc": "This can control how long the pearl flies before it is destroyed. "
 }

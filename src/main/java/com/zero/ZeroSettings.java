@@ -34,9 +34,9 @@ public class ZeroSettings
     public static int projectileRaycastLength = 0;
 
     @Rule(
-            categories = {ZERO,EXPERIMENTAL,OPTIMIZATION},
+            categories = {ZERO,FEATURE},
             options = {"0","40"},
             strict = false
     )
-    public static int Pealtime = 40;
+    public static int Pearltime = 40;
 }

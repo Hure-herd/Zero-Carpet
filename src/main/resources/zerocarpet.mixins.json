@@ -1,6 +1,7 @@
 {
 	"required": true,
 	"package": "com.zero.mixin",
+	"plugin": "com.zero.ZeroMixinPlugin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"BatEntityMixin",
