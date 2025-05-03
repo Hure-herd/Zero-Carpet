@@ -1,5 +1,7 @@
 # ZERO-Carpet-Addition
 
+这是Capet mod的一个附属mod，仅仅支持1.21和1.21.1
+
 # 规则
 
 ## 珍珠超传(PortalPearlWarp)
