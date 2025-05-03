@@ -11,7 +11,7 @@
   "carpet.rule.disableBatCanSpawn.desc" : "阻止蝙蝠自然生成",
 
   "carpet.rule.enderpearlloadchunk.name": "珍珠加载区块",
-  "carpet.rule.enderpearlloadchunk.desc" : "珍珠可以加载区块就像1.21.2一样。当加载超过100gt后自动删除",
+  "carpet.rule.enderpearlloadchunk.desc" : "珍珠可以加载区块就像1.21.2一样。当加载超过珍珠飞行时间后自动删除",
 
   "carpet.rule.projectileRaycastLength.name": "投掷物Raycast长度",
   "carpet.rule.projectileRaycastLength.desc": "更改Raycast的距离。如果设置为0，将检查所有到达目的地的块，Vanilla!",

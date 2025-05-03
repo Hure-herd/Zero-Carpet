@@ -22,8 +22,8 @@ public class ChunkUtils {
         return coord >> 4;
     }
 
-    public static long addEnderPearlTicket(ServerWorld world, ChunkPos chunkPos) {
-        world.getChunkManager().addTicket(ENDER_PEARL, chunkPos, 2, chunkPos);
+    public static long addEnderPearlTicket(ServerWorld ServerWolrd, ChunkPos chunkPos) {
+        ServerWolrd.getChunkManager().addTicket(ENDER_PEARL, chunkPos, 2, chunkPos);
         return ENDER_PEARL.getExpiryTicks();
     }
 }
