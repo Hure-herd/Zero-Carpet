@@ -1,5 +1,7 @@
 # ZERO-Carpet-Addition
 
+[![Github](https://img.shields.io/github/downloads/Hure-herd/Zero-Carpet/total?color=161616&label=Github%20downloads&logo=github)](https://github.com/Hure-herd/Zero-Carpet/releases)
+
 这是Capet mod的一个附属mod，仅仅支持1.21和1.21.1
 
 # 规则
