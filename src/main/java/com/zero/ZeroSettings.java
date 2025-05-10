@@ -39,4 +39,9 @@ public class ZeroSettings
             strict = false
     )
     public static int Pearltime = 40;
+
+    @Rule(
+            categories = {ZERO,FEATURE}
+    )
+    public static boolean soundsuppression = false;
 }

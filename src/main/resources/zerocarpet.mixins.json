@@ -4,6 +4,9 @@
 	"plugin": "com.zero.ZeroMixinPlugin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
+		"soundsuppressionintroduce.BlockEntityMixin",
+		"soundsuppressionintroduce.WorldChunkMixin",
+		"soundsuppressionintroduce.SculkSensorBlockMixin",
 		"BatEntityMixin",
 		"EnderPearlTeleportMixin",
 		"TntEntityMixin",

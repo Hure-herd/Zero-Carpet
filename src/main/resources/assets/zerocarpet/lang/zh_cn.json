@@ -18,5 +18,8 @@
   "carpet.rule.projectileRaycastLength.extra.0": "这减少了快速移动的延迟。在1.12中该值为200。",
 
   "carpet.rule.Pearltime.name": "珍珠飞行时间",
-  "carpet.rule.Pearltime.desc": "这个可以控制珍珠飞行多久就销毁"
+  "carpet.rule.Pearltime.desc": "这个可以控制珍珠飞行多久就销毁",
+
+  "carpet.rule.soundsuppression.name": "声音抑制",
+  "carpet.rule.soundsuppression.desc" : "将校准幽匿感测体的方块实体数据保留到陷阱箱！！！注意是陷阱箱"
 }

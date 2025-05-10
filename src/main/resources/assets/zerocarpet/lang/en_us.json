@@ -18,5 +18,8 @@
   "carpet.rule.projectileRaycastLength.extra.0": "This reduces lag for fast projectiles. In 1.12 the value was 200.",
 
   "carpet.rule.Pearltime.name": "Pealtime",
-  "carpet.rule.Pearltime.desc": "This can control how long the pearl flies before it is destroyed. "
+  "carpet.rule.Pearltime.desc": "This can control how long the pearl flies before it is destroyed. ",
+
+  "carpet.rule.soundsuppression.name": "Soundsuppression",
+  "carpet.rule.soundsuppression.desc" : "Keep the block entity data of the calibrated hidden sensor to the trapped chest! ! ! Note that it is a trapped chest"
 }

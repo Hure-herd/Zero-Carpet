@@ -26,6 +26,13 @@
 * 开启方法: `/carpet enderpearlloadchunk true`
 * 分类: `ZERO` , `FEATURE`
 
+## 声音抑制移植(Soundsuppression)
+将校准幽匿感测体的方块实体数据保留到陷阱箱！！！注意是陷阱箱
+* 默认值: `false`
+* 可选参数: `true`, `false`
+* 开启方法: `/carpet soundsuppression true`
+* 分类: `ZERO` , `Feature`
+
 ## 珍珠加载时间(Pearltime)
 这个规则可以控制珍珠在大于20m/gt后多少gt被销毁
 * 默认值: `40`
