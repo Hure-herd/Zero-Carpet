@@ -28,7 +28,7 @@
 * 开启方法: `/carpet enderpearlloadchunk true`
 * 分类: `ZERO` , `FEATURE`
 
-## 声音抑制移植(Soundsuppression)
+## 声音抑制移植(Soundsuppression)MC =1.21.1使用V1.1.0
 将校准幽匿感测体的方块实体数据保留到陷阱箱！！！注意是陷阱箱
 * 默认值: `false`
 * 可选参数: `true`, `false`
