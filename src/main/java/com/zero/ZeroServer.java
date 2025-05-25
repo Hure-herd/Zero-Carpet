@@ -23,31 +23,40 @@ package com.zero;
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.server.MinecraftServer;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import com.zero.utils.ComponentTranslate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 
 public class ZeroServer implements CarpetExtension, ModInitializer
 {
-    public static String MOD_ID = "Zero-additions";
+    public static final String MOD_ID = "zerocarpet";
 
-    private static MinecraftServer minecraftServer;
+    public static final String MOD_NAME = "Zero Carpet";
 
-    public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_NAME);
+
+    private static final ZeroServer INSTANCE = new ZeroServer();
+
+    private MinecraftServer minecraftServer;
 
     public static MinecraftServer getServer() {
-        return minecraftServer;
+        if (INSTANCE.minecraftServer == null) {
+            throw new RuntimeException("MinecraftServer hasn't finished initializing yet!");
+        } else {
+            return INSTANCE.minecraftServer;
+        }
     }
 
-    public String get_version() {
-        return "1.0.0";
+    public String getVersion() {
+        return FabricLoader.getInstance().getModContainer(MOD_ID).orElseThrow().getMetadata().getVersion().getFriendlyString();
     }
 
     public static void loadExtension() {
-        CarpetServer.manageExtension(new ZeroServer());
+        CarpetServer.manageExtension(INSTANCE);
     }
 
     public static Boolean shouldKeepPearl;
@@ -60,7 +69,7 @@ public class ZeroServer implements CarpetExtension, ModInitializer
 
     @Override
     public void onGameStarted() {
-        LOGGER.info(MOD_ID + " " + "v" + get_version() + "载入成功");
+        LOGGER.info("{} v{} 载入成功", MOD_NAME, getVersion());
         CarpetServer.settingsManager.parseSettingsClass(ZeroSettings.class);
 
     }
@@ -72,6 +81,6 @@ public class ZeroServer implements CarpetExtension, ModInitializer
 
     @Override
     public void onServerLoaded(MinecraftServer server) {
-        minecraftServer = server;
+        this.minecraftServer = server;
     }
 }
