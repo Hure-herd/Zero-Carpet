@@ -9,7 +9,7 @@ import com.zero.utils.ChunkUtils;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.projectile.thrown.EnderPearlEntity;
-import net.minecraft.entity.projectile.thrown.ThrownEntity;
+import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
@@ -22,16 +22,16 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(EnderPearlEntity.class)
-public abstract class EnderPearlEntityMixin extends ThrownEntity {
-    protected EnderPearlEntityMixin(EntityType<? extends ThrownEntity> entityType, World world) {
+public abstract class EnderPearlEntityMixin extends ThrownItemEntity {
+    public EnderPearlEntityMixin(EntityType<? extends ThrownItemEntity> entityType, World world) {
         super(entityType, world);
     }
 
     @Unique
-    private long highSpeedTick = -1L;
+    private long chunkTicketExpiryTicks = 0L;
 
     @Unique
-    private long chunkTicketExpiryTicks = 0L;
+    private int highSpeedAge = 0;
 
     @Inject(
             method = "tick",
@@ -48,24 +48,18 @@ public abstract class EnderPearlEntityMixin extends ThrownEntity {
     )
     private void loadingChunks(
             CallbackInfo ci,
+            @Local(ordinal = 0) Entity entity,
             @Share("i") LocalIntRef i,
             @Share("j") LocalIntRef j
     ) {
-        Entity entity = this.getOwner();
-        if(!ZeroSettings.enderpearlloadchunk){
-            return;
+        if (!ZeroSettings.enderpearlloadchunk) return;
+
+        if (this.isHighSpeed()) {
+            ++this.highSpeedAge;
+        } else {
+            this.highSpeedAge = 0;
         }
-
-        double xVel = Math.abs(this.getVelocity().getX());
-        double zVel = Math.abs(this.getVelocity().getZ());
-        boolean highSpeed = xVel >= 20d || zVel >= 20d;
-
-        if (highSpeed && this.highSpeedTick == -1L) {
-            this.highSpeedTick = this.age;
-        }
-
-        if (!ZeroServer.shouldKeepPearl && highSpeedTick != -1L && this.age - highSpeedTick > ZeroSettings.Pearltime
-        ) {
+        if (this.isAlive() && this.highSpeedAge > ZeroSettings.Pearltime) {
             ZeroServer.LOGGER.warn(
                     "The pearl(own: {}) has been in high speed for a long time and has been removed",
                     entity instanceof ServerPlayerEntity ? entity.getName().getString() : "unknown"
@@ -89,6 +83,11 @@ public abstract class EnderPearlEntityMixin extends ThrownEntity {
                 }
             }
         }
+    }
+
+    @Unique
+    private boolean isHighSpeed() {
+        return Math.abs(this.getVelocity().getX()) > 20.0d || Math.abs(this.getVelocity().getZ()) > 20.0d;
     }
 
     @Unique
