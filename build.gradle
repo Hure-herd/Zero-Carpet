@@ -1,57 +1,58 @@
 plugins {
-	id 'fabric-loom' version '1.10-SNAPSHOT'
+	id 'fabric-loom' version "${loom_version}"
 	id 'maven-publish'
 }
-
-version = project.mod_version
-group = project.maven_group
 
 base {
 	archivesName = project.archives_base_name
 }
 
+private String getModVersion() {
+	String version = "$project.mod_version"
+	if (System.getenv("BUILD_RELEASE") != "true" && System.getenv("JITPACK") != "true") {
+		final String buildNumber = System.getenv("GITHUB_RUN_NUMBER")
+		version += buildNumber != null ? "-build.$buildNumber" : "-snapshot"
+	}
+	return version;
+}
+
+version = "v${this.getModVersion()}-mc${project.minecraft_version}"
+group = project.maven_group
+
 repositories {
 	maven {
-		name = "Masa"
-		url 'https://masa.dy.fi/maven'
+		name = 'Fabric'
+		url = 'https://maven.fabricmc.net/'
 	}
 	maven {
-		name = "Fallen"
-		url = "https://maven.fallenbreath.me/releases"
+		name = 'Masa'
+		url = 'https://masa.dy.fi/maven'
 	}
 	maven {
-		name = "Modrinth"
-		url = "https://api.modrinth.com/maven"
+		name = 'Fallen'
+		url = 'https://maven.fallenbreath.me/releases'
 	}
-	maven {
-		name = "Fabric"
-		url = "https://maven.fabricmc.net/"
-	}
+}
+
+dependencies {
+	// To change the versions see the gradle.properties file
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+	modImplementation "carpet:fabric-carpet:${project.carpet_core_version}"
+	modImplementation "carpettisaddition:carpet-tis-addition:${project.tis_carpet_version}"
 }
 
 loom {
 	accessWidenerPath = file("src/main/resources/zero.accesswidener")
-	splitEnvironmentSourceSets()
-
-	mods {
-		"zerocarpet" {
-			sourceSet sourceSets.main
-			sourceSet sourceSets.client
-		}
+	runConfigs.configureEach {
+		vmArg("-Dmixin.debug.export=true")
 	}
-
-}
-
-dependencies {
-	modImplementation "carpettisaddition:carpet-tis-addition:${project.tis_carpet_version}"
-	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-	modImplementation "carpet:fabric-carpet:${project.carpet_core_version}"
 }
 
 processResources {
-	inputs.property "version", project.version
+	inputs.property "version", "${this.getModVersion()}+mc${minecraft_version}"
 
 	filesMatching("fabric.mod.json") {
 		expand "version": inputs.properties.version

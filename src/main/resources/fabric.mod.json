@@ -2,13 +2,14 @@
 	"schemaVersion": 1,
 	"id": "zerocarpet",
 	"version": "${version}",
-	"name": "Zerocarpet",
+	"name": "Zero Carpet",
 	"description": "This is a carpet for ZeroCraft",
 	"authors": [
-		"Hureherd","Crystal_0404"
+		"Hureherd",
+		"Crystal0404"
 	],
 	"contact": {
-
+		"sources": "https://github.com/Hure-herd/Zero-Carpet"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/zerocarpet/icon.png",
@@ -21,15 +22,12 @@
 	"mixins": [
 		"zerocarpet.mixins.json"
 	],
-	"depends": {
-		"fabricloader": ">=0.11.6",
-		"minecraft": "~1.21.1",
-		"java": ">=21",
-		"fabric-api": "*"
-	},
 	"accessWidener": "zero.accesswidener",
-	"suggests": {
-		"another-mod": "*"
+	"depends": {
+		"carpet": "*",
+		"fabricloader": ">=0.16.0",
+		"minecraft": ["1.21", "1.21.1"],
+		"java": ">=21"
 	},
 	"custom": {
 		"modmenu": {

@@ -1,19 +1,20 @@
 {
-	"required": true,
-	"package": "com.zero.mixin",
-	"plugin": "com.zero.ZeroMixinPlugin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"soundsuppressionintroduce.BlockEntityMixin",
-		"soundsuppressionintroduce.WorldChunkMixin",
-		"soundsuppressionintroduce.SculkSensorBlockMixin",
-		"BatEntityMixin",
-		"EnderPearlTeleportMixin",
-		"TntEntityMixin",
-		"EnderPearlEntityMixin",
-		"TicketLoggerMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
+  "required": true,
+  "package": "com.zero.mixin",
+  "plugin": "com.zero.ZeroMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "BatEntityMixin",
+    "EnderPearlEntityMixin",
+    "EnderPearlTeleportMixin",
+    "ProjectileUtilMixin",
+    "TicketLoggerMixin",
+    "TntEntityMixin",
+    "soundsuppressionintroduce.BlockEntityMixin",
+    "soundsuppressionintroduce.SculkSensorBlockMixin",
+    "soundsuppressionintroduce.WorldChunkMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
 	}
 }
