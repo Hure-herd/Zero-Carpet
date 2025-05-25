@@ -22,10 +22,10 @@ package com.zero;
 
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
+import com.zero.utils.ComponentTranslate;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.server.MinecraftServer;
-import com.zero.utils.ComponentTranslate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
