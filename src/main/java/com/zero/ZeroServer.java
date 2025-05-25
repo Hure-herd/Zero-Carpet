@@ -51,7 +51,7 @@ public class ZeroServer implements CarpetExtension, ModInitializer
         }
     }
 
-    public String getVersion() {
+    public static String getVersion() {
         return FabricLoader.getInstance().getModContainer(MOD_ID).orElseThrow().getMetadata().getVersion().getFriendlyString();
     }
 

@@ -8,6 +8,7 @@
     "EnderPearlEntityMixin",
     "EnderPearlTeleportMixin",
     "ProjectileUtilMixin",
+    "SettingsManagerMixin",
     "TicketLoggerMixin",
     "TntEntityMixin",
     "soundsuppressionintroduce.BlockEntityMixin",
