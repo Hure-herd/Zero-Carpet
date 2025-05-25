@@ -59,11 +59,8 @@ public class ZeroServer implements CarpetExtension, ModInitializer
         CarpetServer.manageExtension(INSTANCE);
     }
 
-    public static Boolean shouldKeepPearl;
-
     @Override
     public void onInitialize() {
-        shouldKeepPearl = Boolean.getBoolean("pearl.keep");
         ZeroServer.loadExtension();
     }
 
