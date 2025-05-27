@@ -4,16 +4,18 @@
   "plugin": "com.zero.ZeroMixinPlugin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "BatEntityMixin",
-    "EnderPearlEntityMixin",
-    "EnderPearlTeleportMixin",
-    "ProjectileUtilMixin",
-    "SettingsManagerMixin",
-    "TicketLoggerMixin",
-    "TntEntityMixin",
     "soundsuppressionintroduce.BlockEntityMixin",
     "soundsuppressionintroduce.SculkSensorBlockMixin",
-    "soundsuppressionintroduce.WorldChunkMixin"
+    "soundsuppressionintroduce.WorldChunkMixin",
+    "EndStoneFram.EndGatewayBlockEntityMixin",
+    "EndStoneFram.EndGatewayBlockMixin",
+    "EnderPearlTeleportMixin",
+    "EnderPearlTeleportMixin",
+    "EnderPearlEntityMixin",
+    "ProjectileUtilMixin",
+    "TicketLoggerMixin",
+    "TntEntityMixin",
+    "BatEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

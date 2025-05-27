@@ -2,7 +2,7 @@
 
 [![Github](https://img.shields.io/github/downloads/Hure-herd/Zero-Carpet/total?color=161616&label=Github%20downloads&logo=github)](https://github.com/Hure-herd/Zero-Carpet/releases)
 
-这是Capet mod的一个附属mod，仅仅支持1.21和1.21.1
+这是Capet mod的一个附属mod，仅仅支持1.21.1
 
 # 规则
 
@@ -28,8 +28,8 @@
 * 开启方法: `/carpet enderpearlloadchunk true`
 * 分类: `ZERO` , `FEATURE`
 
-## 声音抑制移植(Soundsuppression)MC =1.21.1使用V1.1.0
-将校准幽匿感测体的方块实体数据保留到陷阱箱！！！注意是陷阱箱
+## 声音抑制移植(Soundsuppression)
+将校准幽匿感测体的方块实体数据保留到任何拥有方块数据的方块
 * 默认值: `false`
 * 可选参数: `true`, `false`
 * 开启方法: `/carpet soundsuppression true`
@@ -64,3 +64,10 @@
 * 可选参数: `0`, `200`
 * 开启方法: `/carpet ProjectileRaycastLength 200`
 * 分类: `ZERO` , `Survival`
+
+## 末地石农场(Endstonefram)
+你可以像1.16一样建造末地石农场，这个规则可以让他工作
+* 默认值: `false`
+* 可选参数: `true`, `false`
+* 开启方法: `/carpet endstonefram true`
+* 分类: `ZERO` , `Experimental`

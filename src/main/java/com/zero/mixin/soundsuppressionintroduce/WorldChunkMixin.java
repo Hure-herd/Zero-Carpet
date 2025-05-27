@@ -3,6 +3,8 @@ package com.zero.mixin.soundsuppressionintroduce;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.zero.ZeroSettings;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.TrappedChestBlock;
 import net.minecraft.block.entity.BlockEntity;
@@ -30,11 +32,11 @@ public abstract class WorldChunkMixin {
             return original;
         }
 
-        if (
-                blockEntity instanceof CalibratedSculkSensorBlockEntity
-                        && this.getBlockState(blockEntity.getPos()).getBlock() instanceof TrappedChestBlock
+        BlockState blockState = this.getBlockState(blockEntity.getPos());
+        Block block = blockState.getBlock();
 
-        ) {
+        if (blockEntity instanceof CalibratedSculkSensorBlockEntity
+                && block instanceof BlockEntityProvider) {
             return true;
         } else {
             return original;

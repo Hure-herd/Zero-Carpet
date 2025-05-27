@@ -48,4 +48,10 @@ public class ZeroSettings
             categories = {ZERO,FEATURE}
     )
     public static boolean soundsuppression = false;
+
+    @Rule(
+            categories = {ZERO, EXPERIMENTAL}
+    )
+    public static boolean  endstonefram = false;
+
 }

@@ -21,5 +21,8 @@
   "carpet.rule.Pearltime.desc": "This can control how long the pearl flies before it is destroyed. ",
 
   "carpet.rule.soundsuppression.name": "Soundsuppression",
-  "carpet.rule.soundsuppression.desc" : "Keep the block entity data of the calibrated hidden sensor to the trapped chest! ! ! Note that it is a trapped chest"
+  "carpet.rule.soundsuppression.desc" : "Keep the block entity data of the calibrated hidden sensor to any blcok that is blockentity",
+
+  "carpet.rule.endstonefram.name": "Endstonefram",
+  "carpet.rule.endstonefram.desc": "You can build Endstonefram like 1.16,it can make it work"
 }
