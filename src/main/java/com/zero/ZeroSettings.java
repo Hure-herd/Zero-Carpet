@@ -50,8 +50,15 @@ public class ZeroSettings
     public static boolean soundsuppression = false;
 
     @Rule(
-            categories = {ZERO, EXPERIMENTAL}
+            categories = {ZERO, EXPERIMENTAL},
+            conditions = DisableRule.class
     )
     public static boolean  endstonefram = false;
 
+    private static class DisableRule implements Rule.Condition {
+        @Override
+        public boolean shouldRegister() {
+            return false;
+        }
+    }
 }

@@ -66,6 +66,8 @@
 * 分类: `ZERO` , `Survival`
 
 ## 末地石农场(Endstonefram)
+*当前此功能无法在ZeroCarpet中使用, 如有需要请看看[REMS-Carpet-Addition](https://modrinth.com/mod/rems-carpet-addition)*
+
 你可以像1.16一样建造末地石农场，这个规则可以让他工作
 * 默认值: `false`
 * 可选参数: `true`, `false`

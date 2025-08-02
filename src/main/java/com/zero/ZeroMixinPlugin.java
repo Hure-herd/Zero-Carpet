@@ -25,9 +25,11 @@ public class ZeroMixinPlugin implements IMixinConfigPlugin {
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
         if (Objects.equals(mixinClassName, "com.zero.mixin.tis_carpet.TicketLoggerMixin")) {
             return FabricLoader.getInstance().isModLoaded("carpet-tis-addition");
-        } else {
-            return true;
         }
+        if (mixinClassName.startsWith("com.zero.mixin.EndStoneFram")) {
+            return false;
+        }
+        return true;
     }
 
     @Override
