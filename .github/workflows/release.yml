@@ -57,9 +57,7 @@ jobs:
 #          MODRINTH_API_KEY: ${{ secrets.MODRINTH_API_KEY }}
 #          CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
       - name: publish to github
-        uses: Kir-Antipov/mc-publish@v3.3
+        uses: softprops/action-gh-release@v2
         with:
-          github-tag: ${{ env.tag }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          files: |
-            build/libs/!(*-@(shadow|sources)).jar
+          tag_name: ${{ env.tag }}
+          files: build/libs/*[!sources][!shadow].jar
